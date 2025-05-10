@@ -1,0 +1,584 @@
+number,title,state,author,created_at,updated_at,closed_at,comments,assignee,assignees,labels,reactions_count,url,body
+7500,Observe talk - self-improving oss repo,open,Jgilhuly,2025-05-09,2025-05-09,,0,Jgilhuly,Jgilhuly,devrel,1,https://github.com/Arize-ai/phoenix/issues/7500,
+7489,"[bug] the ""My Annotations"" section should be the annotation summary",open,mikeldking,2025-05-09,2025-05-09,,1,mikeldking,"mikeldking,cephalization",bug,1,https://github.com/Arize-ai/phoenix/issues/7489,"As a user, I want to be able to see the aggregate annotations of a span as I navigate through spans, not just my annotations."
+7486,[BUG]: cannot set worker timeout for run_experiment when running evals,open,damithsenanayake,2025-05-09,2025-05-09,,1,None,,"bug,c/evals,triage",1,https://github.com/Arize-ai/phoenix/issues/7486,"### Where do you use Phoenix
+
+Local (self-hosted)
+
+### What version of Phoenix are you using?
+
+8.31.0
+
+### What operating system are you seeing the problem on?
+
+macOS
+
+### What version of Python are you running Phoenix with?
+
+3.13
+
+### What version of Python or Node are you using instrumentation with?
+
+Python 3.13
+
+### What instrumentation are you using?
+
+_No response_
+
+### What happened?
+
+Running a task that takes more than 30 seconds, currently I'm hitting timeout easily. Meaning that tasks are requeued every time this timeout occurs. Looks like you can set the timeout in executors but 'run_experiment' doesn't take this as a parameter. 
+
+### What did you expect to happen?
+
+be able to set timeout when running experiments for longer time durations. 
+
+### How can we reproduce the bug?
+
+1. create a task which waits more than 30 seconds. 
+2. run_experiment from phoenix evals. 
+
+### Additional information
+
+_No response_"
+7483,Create Phoenix use case video for trace/session evals,open,Jgilhuly,2025-05-08,2025-05-08,,0,None,,"education,devrel",1,https://github.com/Arize-ai/phoenix/issues/7483,
+7482,Create Phoenix trace and session eval notebook,open,Jgilhuly,2025-05-08,2025-05-08,,0,None,,devrel,1,https://github.com/Arize-ai/phoenix/issues/7482,Create Phoenix versions of our trace and session eval notebooks: https://colab.research.google.com/drive/16nXmsIqF92rrLdur-cVCRZP_4O9RQfEG
+7474,[BUG][ui] Long unbroken text does not wrap in span details LLM message,open,cephalization,2025-05-08,2025-05-08,,0,None,,"bug,c/ui",1,https://github.com/Arize-ai/phoenix/issues/7474,"<img width=""1141"" alt=""Image"" src=""https://github.com/user-attachments/assets/1e4bec2e-9427-4165-ad08-e6a545357270"" />
+
+When in markdown mode, long lines of text are unbroken and do not wrap or overflow, making them unreadable.
+
+Sample text
+
+```
+\n        You are an expert user of the Phoenix LLM observability platform by Arize AI. Analyze the user's query and provide practical recommendations or actions.\n\n        The github repository for Phoenix is at https://github.com/Arize-ai/phoenix\n\n        Guidelines:\n        - Answer all questions about Phoenix by searching the Phoenix repository using the Github tool and reading the relevant documentation\n        - Always search against the Phoenix repository Arize-ai/phoenix when accessing github\n        - Documentation is written in markdown, so be sure to filter by the markdown language when searching github for documentation\n        - Documentation is located in the top level 'docs' directory\n        - After searching for documentation, fetch the file contents for the first result\n        - Keep descriptions concise but informative\n        - Always search against the Phoenix repository Arize-ai/phoenix when accessing github\n      
+```
+
+Sample input_messages[0] json
+```json
+{
+        ""message"": {
+          ""role"": ""system"",
+          ""content"": ""\n        You are an expert user of the Phoenix LLM observability platform by Arize AI. Analyze the user's query and provide practical recommendations or actions.\n\n        The github repository for Phoenix is at https://github.com/Arize-ai/phoenix\n\n        Guidelines:\n        - Answer all questions about Phoenix by searching the Phoenix repository using the Github tool and reading the relevant documentation\n        - Always search against the Phoenix repository Arize-ai/phoenix when accessing github\n        - Documentation is written in markdown, so be sure to filter by the markdown language when searching github for documentation\n        - Documentation is located in the top level 'docs' directory\n        - After searching for documentation, fetch the file contents for the first result\n        - Keep descriptions concise but informative\n        - Always search against the Phoenix repository Arize-ai/phoenix when accessing github\n      ""
+        }
+      },
+```"
+7466,"[admin] log retention policy enforcement, some high level metrics of what gets purged.",open,mikeldking,2025-05-07,2025-05-07,,0,RogerHYang,RogerHYang,c/metrics,1,https://github.com/Arize-ai/phoenix/issues/7466,
+7455,[ENHANCEMENT]: Oauth2 for okta,open,zyxue,2025-05-07,2025-05-07,,0,None,,"enhancement,triage,c/auth",1,https://github.com/Arize-ai/phoenix/issues/7455,"### Is your feature request related to a problem? Please describe.
+
+Unclear how to configure oauth2 with okta
+
+Discussion: https://arize-ai.slack.com/archives/C04R3GXC8HK/p1746064311589599
+
+### Describe the solution you'd like
+
+An working example
+
+### Describe any alternative solutions you've considered
+
+_No response_
+
+### Additional context
+
+_No response_
+
+### Social Media Handle
+
+_No response_"
+7454,[bug][annotations][ui] annotation columns on spans table don't seem to reset automatically,open,RogerHYang,2025-05-07,2025-05-07,,0,None,,"bug,c/ui,backlog,c/annotations,priority: low",1,https://github.com/Arize-ai/phoenix/issues/7454,"low priority
+
+<img width=""740"" alt=""Image"" src=""https://github.com/user-attachments/assets/0ac3e28a-5723-4da3-8389-af16549d5c2d"" />"
+7450,[bug] evals quickstart needs update,open,axiomofjoy,2025-05-06,2025-05-06,,1,None,,"bug,devrel",1,https://github.com/Arize-ai/phoenix/issues/7450,"- [ ] When launching Phoenix via the [evals quickstart](https://github.com/Arize-ai/phoenix/blob/main/tutorials/evals/evals_quickstart.ipynb), no traces appear at first because the traces imported via `TraceDataset` are old. This makes it difficult to follow the quickstart.
+- [ ] `phoenix.TraceDataset` is being deprecated, so we should find a way to ingest traces into Phoenix without this.
+- [ ] There are several deprecation warnings throughout the notebook that should be cleaned up."
+7437,[ENHANCEMENT]: Convert Prompts to Langchain format,open,Jgilhuly,2025-05-06,2025-05-06,,0,None,,"enhancement,triage,integration: langchain",1,https://github.com/Arize-ai/phoenix/issues/7437,"### Is your feature request related to a problem? Please describe.
+
+If I want to use Phoenix prompts with a Langchain application, it is not easy for me to convert my prompts into the right format without losing context.
+
+### Describe the solution you'd like
+
+I'd like to be able to retrieve prompts from Phoenix in langchain format, similar to how they can be retrieved in openai or anthropic formats.
+
+### Describe any alternative solutions you've considered
+
+Alternative is retrieving the prompt plain text, and config variables, then converting those to langchain format manually
+
+### Additional context
+
+_No response_
+
+### Social Media Handle
+
+_No response_"
+7435,[cost] [db] database ERD for cost / cost table,open,mikeldking,2025-05-06,2025-05-06,,0,axiomofjoy,axiomofjoy,,1,https://github.com/Arize-ai/phoenix/issues/7435,"We need an ERD to track the cost of LLM spans (prompt cost, completion cost, cache_read_cost, ...)
+
+In addition we need a cost table - preferrably in-memory to start (e.g. defaults maintained by us) plus overrides (in the DB)."
+7434,[cost] [spike] in-memory cost table,open,mikeldking,2025-05-06,2025-05-06,,0,RogerHYang,RogerHYang,,1,https://github.com/Arize-ai/phoenix/issues/7434,create an in-memory cost table that can be run on ingestion that will simulate the impact of adding a cost table. This should be merged to main.
+7433,[cost] [spike] spreadsheet based cost table,open,mikeldking,2025-05-06,2025-05-06,,0,RogerHYang,RogerHYang,enhancement,1,https://github.com/Arize-ai/phoenix/issues/7433,"Create a cost table that takes into account:
+
+- model name regex
+- provider (optional)
+- input token cost
+- output token cost
+- audio token cost
+- cache read token cost
+- cache write token cost
+- reasoning(?) token cost
+
+Create a spreadsheet that can be used to predict a LLM span's cost"
+7424,[bug][annotations] span dsl filtering returns duplicates due to left join because annotations are no longer unique per span,open,RogerHYang,2025-05-05,2025-05-05,,0,None,,"bug,c/annotations",1,https://github.com/Arize-ai/phoenix/issues/7424,
+7422,Question: Manually sending traces from application written in golang,open,jordan-carson,2025-05-05,2025-05-05,,3,None,,question,1,https://github.com/Arize-ai/phoenix/issues/7422,"Hi Team,
+
+I have stood up a phoenix server in our kubernetes cluster. How can I go about hitting /v1/evaluations to send traces from golang applications? Are there any examples / tutorials to manually send traces via the provided APIs? 
+
+Thanks
+Jordan"
+7420,Prompts Empty State,open,mikeldking,2025-05-05,2025-05-05,,0,axiomofjoy,axiomofjoy,,1,https://github.com/Arize-ai/phoenix/issues/7420,
+7419,[ENHANCEMENT]: Filter / Paginate Projects on the projects page,open,cephalization,2025-05-05,2025-05-06,,2,cephalization,cephalization,"enhancement,c/ui",1,https://github.com/Arize-ai/phoenix/issues/7419,"### Is your feature request related to a problem? Please describe.
+
+It is difficult to find a project from the UI when large amounts of projects are created. Multi-tenant use cases, or use cases where projects are generated via deployment can produce many projects of traces.
+
+### Describe the solution you'd like
+
+Filtering and pagination capabilities on the /projects route.
+
+It would be helpful to find projects by name, or sort them by creation date or last updated date.
+
+### Describe any alternative solutions you've considered
+
+Accessing projects via the API is possible, but is cumbersome if you want to then analyze them in the UI.
+
+### Additional context
+
+https://arize-ai.slack.com/archives/C04R3GXC8HK/p1746451040965489
+
+### Social Media Handle
+
+_No response_"
+7416,[bug][annotations] spans table fails to sort on columns for annotations when an annotation contains null label or null score,open,RogerHYang,2025-05-05,2025-05-05,,0,anticorrelator,anticorrelator,"bug,c/server,c/annotations",1,https://github.com/Arize-ai/phoenix/issues/7416,"```
+6 |   spans(first: $first, after: $after, sort: $sort, rootSpansOnly: $rootSpansOnly
+   |   ^
+   | , filterCondition: $filterCondition, orphanSpanAsRootSpan: $orphanSpanAsRootSpan
+Traceback (most recent call last):
+  File ""/opt/homebrew/Caskroom/mambaforge/base/envs/py311/lib/python3.11/site-packages/graphql/execution/execute.py"", line 530, in await_result
+    return_type, field_nodes, info, path, await result
+                                          ^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/mambaforge/base/envs/py311/lib/python3.11/site-packages/strawberry/schema/schema_converter.py"", line 752, in _async_resolver
+    return await await_maybe(
+           ^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/Caskroom/mambaforge/base/envs/py311/lib/python3.11/site-packages/strawberry/utils/await_maybe.py"", line 13, in await_maybe
+    return await value
+           ^^^^^^^^^^^
+  File ""/Users/rogeryang/phoenix/src/phoenix/server/api/types/Project.py"", line 311, in spans
+    return connection_from_cursors_and_nodes(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/rogeryang/phoenix/src/phoenix/server/api/types/pagination.py"", line 261, in connection_from_cursors_and_nodes
+    edges = [Edge(node=node, cursor=str(cursor)) for cursor, node in cursors_and_nodes]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/rogeryang/phoenix/src/phoenix/server/api/types/pagination.py"", line 261, in <listcomp>
+    edges = [Edge(node=node, cursor=str(cursor)) for cursor, node in cursors_and_nodes]
+                                    ^^^^^^^^^^^
+  File ""/Users/rogeryang/phoenix/src/phoenix/server/api/types/pagination.py"", line 119, in __str__
+    cursor_parts.extend([sort_column.type.name, str(sort_column)])
+                                                ^^^^^^^^^^^^^^^^
+  File ""/Users/rogeryang/phoenix/src/phoenix/server/api/types/pagination.py"", line 40, in __str__
+    assert_never(self.value)
+  File ""/opt/homebrew/Caskroom/mambaforge/base/envs/py311/lib/python3.11/typing.py"", line 2542, in assert_never
+    raise AssertionError(f""Expected code to be unreachable, but got: {value}"")
+AssertionError: Expected code to be unreachable, but got: None
+```"
+7396,[playground][ui] AWS credentials form,open,mikeldking,2025-05-02,2025-05-02,,1,cephalization,cephalization,c/ui,1,https://github.com/Arize-ai/phoenix/issues/7396,To authenticate as a user I need to provide a triple.
+7395,[rest] get /v1/projects/:project_identifier/spans?filter,open,mikeldking,2025-05-02,2025-05-02,,0,anticorrelator,anticorrelator,,1,https://github.com/Arize-ai/phoenix/issues/7395,
+7374,[deployment] create a helm chart,open,mikeldking,2025-04-30,2025-05-06,,4,mikeldking,"mikeldking,axiomofjoy",,2,https://github.com/Arize-ai/phoenix/issues/7374,We probably need to create a helm chart for easy deployment on k8s
+7361,[docs] create separate readthedocs builds for every python package,open,mikeldking,2025-04-30,2025-04-30,,0,None,,documentation,1,https://github.com/Arize-ai/phoenix/issues/7361,"create a read-the-docs for each package. Right now it's extremely confusing as to how to install and use the phoenix sub-modules.
+
+https://arize-phoenix.readthedocs.io/en/latest/"
+7355,[ENHANCEMENT]: Support OTel logs in Phoenix,open,GALLLASMILAN,2025-04-30,2025-04-30,,2,None,,enhancement,1,https://github.com/Arize-ai/phoenix/issues/7355,"### Where do you use Phoenix
+
+Local (self-hosted)
+
+### What version of Phoenix are you using?
+
+7.9.2
+
+### What operating system are you seeing the problem on?
+
+Darwin Milans-MacBook-Pro.local 23.6.0 Darwin Kernel Version 23.6.0: Mon Jul 29 21:14:30 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T6000 arm64
+
+### What version of Python are you running Phoenix with?
+
+3.11
+
+### What version of Python or Node are you using instrumentation with?
+
+3.11.11
+
+### What instrumentation are you using?
+
+```python
+import logging
+from opentelemetry.exporter.otlp.proto.http._log_exporter import OTLPLogExporter
+root_logger = logging.getLogger()
+
+resource = Resource(
+        attributes={
+            SERVICE_NAME: ""test-server"",
+            SERVICE_NAMESPACE: ""test"",
+            SERVICE_VERSION: ""1.51.2"",
+        }
+    )
+
+logger_provider = LoggerProvider(resource=resource)
+processor = BatchLogRecordProcessor(OTLPLogExporter())
+logger_provider.add_log_record_processor(processor)
+root_logger.addHandler(LoggingHandler(logger_provider=logger_provider))
+```
+
+### What happened?
+
+When I set the `logger_provider` =>, I get this error, when I send some logs:
+```
+ERROR:    Failed to export logs batch code: 405, reason: Method Not Allowed
+```
+
+For grpc does not work either:
+```
+from opentelemetry.exporter.otlp.proto.grpc._log_exporter import OTLPLogExporter
+
+## --||--
+```
+error => 
+```
+ERROR:    Failed to export logs to localhost:4317, error code: StatusCode.UNIMPLEMENTED
+```
+
+### What did you expect to happen?
+
+The phoenix should accept the logs in both protocols.
+
+### How can we reproduce the bug?
+
+1. Run the Phoenix instance `docker run -p 4318:6006 -p 4317:4317 -i -t arizephoenix/phoenix`
+2. Send some logs (see the code I've provided above)
+
+
+### Additional information
+
+_No response_"
+7351,[bug] Azure OpenAI Playground returns error midstream,open,axiomofjoy,2025-04-29,2025-05-05,,2,None,,"needs information,cannot reproduce,phoenix-cloud",1,https://github.com/Arize-ai/phoenix/issues/7351,"## Description
+
+Users are encountering an error when trying to use Azure OpenAI models in the Phoenix Cloud playground. The error message is:
+
+```
+'NoneType' object has no attribute 'content'
+```
+
+I'm not able to reproduce, but the issue appears related to Cilium.
+
+Somewhat confusingly, the error appears only midway through the stream
+
+```
+
+{
+  ""operationName"": ""PlaygroundOutputSubscription"",
+  ""variables"": {
+    ""input"": {
+      ""messages"": [
+        {""content"": ""You are a chatbot"", ""role"": ""SYSTEM""},
+        {""content"": ""Hello!"", ""role"": ""USER""}
+      ],
+      ""model"": {
+        ""providerKey"": ""AZURE_OPENAI"",
+        ""name"": ""gpt-4o-2024-08-06"",
+        ""endpoint"": ""REDACTED"",
+        ""apiVersion"": ""2024-02-15-preview""
+      },
+      ""invocationParameters"": [
+        {""invocationName"": ""temperature"", ""valueFloat"": 0},
+        {""invocationName"": ""top_p"", ""valueFloat"": 1},
+        {""invocationName"": ""max_tokens"", ""valueInt"": 3000},
+        {""invocationName"": ""seed"", ""valueInt"": 1},
+        {""invocationName"": ""frequency_penalty"", ""valueFloat"": 0},
+        {""invocationName"": ""presence_penalty"", ""valueFloat"": 0}
+      ],
+      ""template"": {
+        ""format"": ""MUSTACHE"",
+        ""variables"": {}
+      },
+      ""apiKey"": ""REDACTED_FOR_SECURITY""
+    }
+  },
+  ""query"": ""subscription PlaygroundOutputSubscription($input: ChatCompletionInput!) { chatCompletion(input: $input) { __typename ... on TextChunk { content } ... on ToolCallChunk { id function { name arguments } } ... on ChatCompletionSubscriptionResult { span { id } } ... on ChatCompletionSubscriptionError { message } } }""
+}
+```
+
+
+```
+--graphql
+Content-Type: application/json
+
+{}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""TextChunk"", ""content"": """"}}}}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""TextChunk"", ""content"": ""Hello""}}}}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""TextChunk"", ""content"": ""!""}}}}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""TextChunk"", ""content"": "" How""}}}}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""TextChunk"", ""content"": "" can""}}}}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""TextChunk"", ""content"": "" I""}}}}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""TextChunk"", ""content"": "" assist""}}}}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""TextChunk"", ""content"": "" you""}}}}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""TextChunk"", ""content"": "" today""}}}}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""TextChunk"", ""content"": ""?""}}}}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""ChatCompletionSubscriptionError"", ""message"": ""'NoneType' object has no attribute 'content'""}}}}
+
+--graphql
+Content-Type: application/json
+
+{""payload"": {""data"": {""chatCompletion"": {""__typename"": ""ChatCompletionSubscriptionResult"", ""span"": {""id"": ""U3BhbjozODQ4MDg=""}}}}}
+
+--graphql--
+```
+
+Appears to be happening for streaming and non-streaming.
+
+```
+{""query"":""mutation PlaygroundOutputMutation(\n  $input: ChatCompletionInput!\n) {\n  chatCompletion(input: $input) {\n    __typename\n    content\n    errorMessage\n    span {\n      id\n    }\n    toolCalls {\n      id\n      function {\n        name\n        arguments\n      }\n    }\n  }\n}\n"",""variables"":{""input"":{""messages"":[{""content"":""You are a chatbot"",""role"":""SYSTEM""},{""content"":""Hello"",""role"":""USER""}],""model"":{""providerKey"":""AZURE_OPENAI"",""name"":""gpt-4o-2024-05-13"",""endpoint"":""REDACTED"",""apiVersion"":""2024-02-15-preview""},""invocationParameters"":[{""canonicalName"":""TEMPERATURE"",""invocationName"":""temperature"",""valueFloat"":0},{""canonicalName"":null,""invocationName"":""frequency_penalty"",""valueFloat"":0},{""canonicalName"":null,""invocationName"":""presence_penalty"",""valueFloat"":0},{""canonicalName"":""TOP_P"",""invocationName"":""top_p"",""valueFloat"":1},{""invocationName"":""seed"",""canonicalName"":""RANDOM_SEED"",""valueInt"":1},{""invocationName"":""max_tokens"",""canonicalName"":""MAX_COMPLETION_TOKENS"",""valueInt"":3000}],""apiKey"":"""",""template"":{""variables"":{},""format"":""MUSTACHE""}}}}
+```
+
+```
+{
+    ""data"": {
+        ""chatCompletion"": {
+            ""__typename"": ""ChatCompletionMutationPayload"",
+            ""content"": null,
+            ""errorMessage"": ""'NoneType' object has no attribute 'content'"",
+            ""span"": {
+                ""id"": ""U3BhbjozODg2NjM=""
+            },
+            ""toolCalls"": []
+        }
+    }
+}
+```"
+7348,add helper to parse integrity errors,open,axiomofjoy,2025-04-29,2025-04-29,,0,axiomofjoy,axiomofjoy,enhancement,1,https://github.com/Arize-ai/phoenix/issues/7348,"There is not a way to distinguish between SQLite integrity errors that arise as a result of violating a foreign key constraint vs. a unique constraint without inspecting the error message string itself. We can add a helper to accomplish this to surface correct error messages without issuing additional requests.
+
+_Originally posted by @axiomofjoy in https://github.com/Arize-ai/phoenix/pull/7304#discussion_r2067250081_
+            "
+7347,[admin] management URL configuration,open,mikeldking,2025-04-29,2025-04-29,,0,mikeldking,mikeldking,,1,https://github.com/Arize-ai/phoenix/issues/7347,"There are cases (e.x. phoenix cloud) where multiple phoenixes are managed centrally.
+
+E.x. in the case of phoenix cloud there are phoenixes as workspaces
+
+In some cases there are multiple phoenixes under certain slugs
+
+/phoenixes/1
+/phoenixes/2
+
+But you ultimately want admins to be able to go back to the ""manager"" - or management app. 
+
+"
+7334,[annotations][client] get_span_annotations,open,mikeldking,2025-04-28,2025-04-28,,0,anticorrelator,anticorrelator,,1,https://github.com/Arize-ai/phoenix/issues/7334,
+7325,[playground] add ability to use custom providers in playground,open,axiomofjoy,2025-04-28,2025-04-28,,0,None,,"enhancement,c/playground",1,https://github.com/Arize-ai/phoenix/issues/7325,"Metaphorically ""sub-classes"" an existing provider for use with ollama or deepseek. At the moment, you have to overload the singular OpenAI provider to accomplish this, which means you can't use ollama/ deepseek/ openai at the same time.
+
+Maybe explore the need for a provider vs. platform ""sub-class""."
+7324,[docs] configuring phoenix with tls,open,axiomofjoy,2025-04-28,2025-04-28,,0,None,,documentation,1,https://github.com/Arize-ai/phoenix/issues/7324,Guidance on how to deploy phoenix with tls
+7323,[docs] langchain-specific documentation on how to annotate spans with langgraph,open,axiomofjoy,2025-04-28,2025-04-29,,0,PriyanJindal,PriyanJindal,documentation,1,https://github.com/Arize-ai/phoenix/issues/7323,"langchain-specific documentation on how to annotate spans with langgraph
+
+realistic example of a langgraph implementation using get_current_span"
+7313,[ENHANCEMENT]: add a users rest API,open,mikeldking,2025-04-28,2025-04-28,,0,mikeldking,mikeldking,"enhancement,c/rbac",1,https://github.com/Arize-ai/phoenix/issues/7313,"### Is your feature request related to a problem? Please describe.
+
+Add a users api for only admins
+
+### Describe the solution you'd like
+
+a REST api
+
+
+### Describe any alternative solutions you've considered
+
+_No response_
+
+### Additional context
+
+_No response_
+
+### Social Media Handle
+
+_No response_"
+7310,[BUG]: incorrect spans appearing on filtered spans table,open,cephalization,2025-04-27,2025-04-28,,1,None,,"bug,c/filters",1,https://github.com/Arize-ai/phoenix/issues/7310,"### Where do you use Phoenix
+
+Local (self-hosted)
+
+### What version of Phoenix are you using?
+
+Cloud
+
+### What operating system are you seeing the problem on?
+
+Cloud
+
+### What version of Python are you running Phoenix with?
+
+Cloud
+
+### What version of Python or Node are you using instrumentation with?
+
+_No response_
+
+### What instrumentation are you using?
+
+_No response_
+
+### What happened?
+
+A span with 0 token count appeared in the spans table even though the filter was set to `cumulative_token_count.total > 0`
+
+![Image](https://github.com/user-attachments/assets/3bded427-b13f-4afd-b549-13e6c505be54)
+
+### What did you expect to happen?
+
+The table accurately portrays the filter
+
+### How can we reproduce the bug?
+
+Unsure. Hypothesis is to produce a trace with unknown status, unknown kind, and some child span with or without tokens
+
+### Additional information
+
+See public conversation https://arize-ai.slack.com/archives/C04R3GXC8HK/p1745696860492159?thread_ts=1745696860.492159&cid=C04R3GXC8HK"
+7309,provide alternative method to securely pass secrets to phoenix,open,axiomofjoy,2025-04-27,2025-04-27,,0,None,,"enhancement,c/auth",1,https://github.com/Arize-ai/phoenix/issues/7309,"Some users are reporting security concerns around passing secrets as environment variables into the Phoenix container, presumably because the environment variable could be extracted if a malicious actor gained shell access to a container. One option to alleviate this concern would be to allow users to specific a path to a volume-mounted dot env file.
+
+Thread: https://arizeai.slack.com/archives/C017QTPKE0H/p1745597796329189"
+7308,[client][python] - migrate all dataset methods,open,mikeldking,2025-04-27,2025-04-27,,0,RogerHYang,RogerHYang,python,1,https://github.com/Arize-ai/phoenix/issues/7308,"people need the ability to create, update, and delete datasets with the light-weight client. Adding examples to a dataset from an application should be heavily encouraged as it makes Phoenix be a viable repository of interesting examples that accumulates data at runtime."
+7307,"[bug] docs - get_spans_dataframe, get evals etc. not in docs at all",open,mikeldking,2025-04-27,2025-04-27,,0,axiomofjoy,"anticorrelator,axiomofjoy","bug,documentation",1,https://github.com/Arize-ai/phoenix/issues/7307,"See https://arize-phoenix.readthedocs.io/en/latest/api/client.html#phoenix-client-client
+
+There is no evidence of the main critical methods to be used when performing EDD in a notebook."
+7298,[playground] support custom headers for playground usage,open,mikeldking,2025-04-25,2025-04-28,,1,None,,"enhancement,c/playground",1,https://github.com/Arize-ai/phoenix/issues/7298,"headers can be used by llm services to track down costs. See
+
+<img width=""777"" alt=""Image"" src=""https://github.com/user-attachments/assets/cd5cefbc-3efa-4162-b4bf-f9743c8e1f5f"" />"
+7287,[bug] don't recieve invitation email,open,mikeldking,2025-04-25,2025-04-25,,1,RogerHYang,RogerHYang,bug,1,https://github.com/Arize-ai/phoenix/issues/7287,"For whatever reason when I go through the new phoenix workspace workflow, I don't get an email that I've been added to a phoenix. I do get the reset password email."
+7279,[bug] subscription errors not propagated to the UI,open,mikeldking,2025-04-24,2025-04-25,,0,RogerHYang,RogerHYang,"bug,c/ui",1,https://github.com/Arize-ai/phoenix/issues/7279,"If there's an error in the subscription there's no indication in the UI
+
+<img width=""2056"" alt=""Image"" src=""https://github.com/user-attachments/assets/031e538a-a7d3-4f76-a697-30cf2ff4dbb1"" />"
+7278,[onboarding] default time frame on demos,open,s-yeddula,2025-04-24,2025-04-24,,0,None,,onboarding,1,https://github.com/Arize-ai/phoenix/issues/7278,"In our Phoenix demos, the time frame is defaulted to 7 days. This makes it look like the demos are empty unless the time frame is adjusted to one month. 
+
+https://phoenix-demo.arize.com/projects
+
+
+"
+7277,[FIX]: gracefully surface errors messages from dataset CSV upload,open,axiomofjoy,2025-04-24,2025-04-24,,0,None,,,1,https://github.com/Arize-ai/phoenix/issues/7277,"CSV upload is very tricky. When it fails, we give a generic error message with insufficient context for the user to debug the issue.
+
+Original context: https://arize-ai.slack.com/archives/C04R3GXC8HK/p1745437592883669"
+7263,[ENHANCEMENT]: add the ability to tag or organize datasets,open,axiomofjoy,2025-04-23,2025-04-28,,0,None,,enhancement,5,https://github.com/Arize-ai/phoenix/issues/7263,"### Is your feature request related to a problem? Please describe.
+
+We're sharing an instance of Phoenix with another team, working on separate projects. I'd like our datasets to be more easily organized, and findable. They have a huge list of files right now and adding ours in there isn't going to make it any easier to tell what's what.
+
+### Describe the solution you'd like
+
+The ability to namespace or otherwise organize datasets into projects.
+
+### Describe any alternative solutions you've considered
+
+_No response_
+
+### Additional context
+
+_No response_
+
+### Social Media Handle
+
+_No response_"
+7256,update readme to be more descriptive,open,amank94,2025-04-23,2025-04-23,,0,None,,"documentation,devrel,onboarding",1,https://github.com/Arize-ai/phoenix/issues/7256,
+7255,[ENHANCEMENT]:  add `allow_sign_up` boolean flag for OpenID Connect,open,RogerHYang,2025-04-23,2025-04-23,,0,RogerHYang,RogerHYang,"enhancement,c/server,c/auth",1,https://github.com/Arize-ai/phoenix/issues/7255,"### Is your feature request related to a problem? Please describe.
+
+currently no way to explicitly forbid sign up via OIDC
+
+### Describe the solution you'd like
+
+see `allow_sign_up` from [here](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/generic-oauth/#configuration-options)
+
+### Describe any alternative solutions you've considered
+
+_No response_
+
+### Additional context
+
+_No response_
+
+### Social Media Handle
+
+_No response_"
+7254,[bug] Phoenix prompt does not preserve original tool definition key order,open,cephalization,2025-04-23,2025-04-28,,5,RogerHYang,RogerHYang,"bug,c/server",1,https://github.com/Arize-ai/phoenix/issues/7254,"When users save a prompt with Phoenix, and then fetch that same prompt back, any returned tool definitions have a different key order for their object properties.
+
+While the JSON specification does not mandate the object property order be stable, I do think it is undesirable as a user to save raw json (tool definition) one way, but retrieve it back in another."
+7246,CrewAI Agent Pattern Examples,open,Jgilhuly,2025-04-22,2025-04-22,,0,SrilakshmiC,SrilakshmiC,"documentation,c/evals,c/traces,devrel",1,https://github.com/Arize-ai/phoenix/issues/7246,"Create example notebooks for each of these [patterns](https://www.anthropic.com/engineering/building-effective-agents) using CrewAI:
+1. Router
+2. Prompt chaining
+3. Parallelization
+4. Orchestrator
+5. Evaluator-Optimizer
+
+Some of the patterns might be impossible with CrewAI. If so, leave them out.
+
+The notebook(s) should show how to trace and evaluate the agent in Arize AX"
+7245,OpenAI Agents Agent Pattern Examples,open,Jgilhuly,2025-04-22,2025-04-22,,0,exiao,exiao,"documentation,devrel",1,https://github.com/Arize-ai/phoenix/issues/7245,"Create example notebooks for each of these [patterns](https://www.anthropic.com/engineering/building-effective-agents) using OpenAI Agents:
+1. Router
+2. Prompt chaining
+3. Parallelization
+4. Orchestrator
+5. Evaluator-Optimizer
+
+Some of the patterns might be impossible with OpenAI Agents. If so, leave them out.
+
+The notebook(s) should show how to trace and evaluate the agent in Arize AX"
+7244,Autogen Agent Pattern Examples,open,Jgilhuly,2025-04-22,2025-04-22,,0,s-yeddula,s-yeddula,"documentation,education,devrel",1,https://github.com/Arize-ai/phoenix/issues/7244,"Create example notebooks for each of these [patterns](https://www.anthropic.com/engineering/building-effective-agents) using Autogen:
+1. Router
+2. Prompt chaining
+3. Parallelization
+4. Orchestrator
+5. Evaluator-Optimizer
+
+Some of the patterns might be impossible with Autogen. If so, leave them out.
+
+The notebook(s) should show how to trace and evaluate the agent in Arize AX"
